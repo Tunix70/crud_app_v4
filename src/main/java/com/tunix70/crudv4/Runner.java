@@ -1,12 +1,29 @@
 package com.tunix70.crudv4;
 
 
+import com.tunix70.crudv4.model.Region;
+import com.tunix70.crudv4.repository.DAO.RegionDAOImpl;
 import com.tunix70.crudv4.view.ConsoleView;
 
 public class Runner {
     public static void main(String[] args) {
-        ConsoleView consoleView = new ConsoleView();
-        consoleView.startApp();
+        RegionDAOImpl rr = new RegionDAOImpl();
+//        System.out.println(rr.getAll());
+//
+//        System.out.println("\n========================\n");
 
+         System.out.println(rr.getById(1l));
+//
+//        System.out.println("\n========================\n");
+//
+//            rr.save(new Region(9l, "new"));
+//
+//        System.out.println("\n========================\n");
+//
+//        System.out.println(rr.update(new Region(1l, "one")));
+//
+//        System.out.println("\n========================\n");
+//        rr.deleteById(2l);
+//        System.out.println(rr.getAll());
     }
 }

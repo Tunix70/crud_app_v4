@@ -1,6 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
-<?xml version="1.0" encoding="utf-8" ?>
-<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+<hibernate-configuration>
     <session-factory>
         <property name="connection.url">jdbc:postgresql://localhost:5432/crudv4</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
@@ -8,10 +11,12 @@
         <property name="connection.password">root</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
         <property name="show_sql">true</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
 
-        <mapping resource="com/tunix70/crudv4/model/Region.hbm.xml" />
-        <mapping resource="com/tunix70/crudv4/model/Post.hbm.xml" />
-        <mapping resource="com/tunix70/crudv4/model/Writer.hbm.xml" />
-        <mapping resource="com/tunix70/crudv4/model/PostStatus.hbm.xml" />
+        <!-- Mapping files -->
+        <mapping class="com.tunix70.crudv4.model.Region"/>
+<!--        <mapping class="com.tunix70.crudv4.model.Post"/>-->
+<!--        <mapping class="com.tunix70.crudv4.model.Writer"/>-->
+<!--        <mapping class="com.tunix70.crudv4.model.PostStatus"/>-->
     </session-factory>
 </hibernate-configuration>

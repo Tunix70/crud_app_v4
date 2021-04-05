@@ -1,11 +1,18 @@
 package com.tunix70.crudv4.model;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "writer", schema = "public")
 public class Writer {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "writer_id")
     private Long id;
+    @Column (name = "firstname")
     private String firstName;
+    @Column (name = "lastname")
     private String lastName;
     private List<Post> post;
     private Region region;

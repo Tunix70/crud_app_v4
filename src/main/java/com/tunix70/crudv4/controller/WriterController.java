@@ -1,7 +1,7 @@
 package com.tunix70.crudv4.controller;
 
 import com.tunix70.crudv4.model.Writer;
-import com.tunix70.crudv4.repository.JDBC.JDBCWriterRepositoryImpl;
+import com.tunix70.crudv4.repository.DAO.WriterDAOImpl;
 import com.tunix70.crudv4.repository.WriterRepository;
 
 
@@ -9,7 +9,7 @@ import com.tunix70.crudv4.repository.WriterRepository;
 import java.util.List;
 
 public class WriterController {
-    private WriterRepository writerRepository = new JDBCWriterRepositoryImpl();
+    private WriterRepository writerRepository = new WriterDAOImpl();
 
     public List<Writer> getAll(){
         return writerRepository.getAll();

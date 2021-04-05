@@ -1,14 +1,14 @@
 package com.tunix70.crudv4.controller;
 
 import com.tunix70.crudv4.model.Region;
-import com.tunix70.crudv4.repository.JDBC.JDBCRegionRepositoryImpl;
+import com.tunix70.crudv4.repository.DAO.RegionDAOImpl;
 import com.tunix70.crudv4.repository.RegionRepository;
 
 
 import java.util.List;
 
 public class RegionController {
-    private RegionRepository regionRepository = new JDBCRegionRepositoryImpl();
+    private RegionRepository regionRepository = new RegionDAOImpl();
 
     public List<Region> getAll(){
         return regionRepository.getAll();

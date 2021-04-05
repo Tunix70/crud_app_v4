@@ -1,7 +1,15 @@
 package com.tunix70.crudv4.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "region", schema = "public")
 public class Region {
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column (name = "region_id")
     private Long id;
+    @Column (name = "name")
     private String name;
 
     public Region() {
@@ -36,3 +44,4 @@ public class Region {
                 '}';
     }
 }
+
