@@ -15,8 +15,8 @@
 
         <!-- Mapping files -->
         <mapping class="com.tunix70.crudv4.model.Region"/>
-<!--        <mapping class="com.tunix70.crudv4.model.Post"/>-->
-<!--        <mapping class="com.tunix70.crudv4.model.Writer"/>-->
+        <mapping class="com.tunix70.crudv4.model.Post"/>
+        <mapping class="com.tunix70.crudv4.model.Writer"/>
 <!--        <mapping class="com.tunix70.crudv4.model.PostStatus"/>-->
     </session-factory>
 </hibernate-configuration>

@@ -3,7 +3,7 @@ package com.tunix70.crudv4.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "post", schema = "crudv4")
+@Table(name = "post", schema = "public")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,8 @@ public class Post {
     private Long created;
     @Column(name = "updated")
     private Long updated;
-    @Column(name = "post_status")
+    @Column(name = "post_status", columnDefinition = "enum('active', 'deleted')")
+    @Enumerated(EnumType.STRING)
     private PostStatus postStatus;
 
     public Post() {

@@ -14,7 +14,11 @@ public class Writer {
     private String firstName;
     @Column (name = "lastname")
     private String lastName;
+    @OneToMany
+    @JoinColumn(name = "post_id")
     private List<Post> post;
+    @OneToOne
+    @JoinColumn(name = "region_id")
     private Region region;
 
 
