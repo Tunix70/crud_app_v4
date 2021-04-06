@@ -1,5 +1,7 @@
 package com.tunix70.crudv4.model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,8 +14,10 @@ public class Post {
     @Column(name = "content")
     private String content;
     @Column(name = "created")
+    @Type(type = "org.hibernate.type.TimestampType")
     private Long created;
     @Column(name = "updated")
+    @Type(type = "org.hibernate.type.TimestampType")
     private Long updated;
     @Column(name = "post_status", columnDefinition = "enum('active', 'deleted')")
     @Enumerated(EnumType.STRING)

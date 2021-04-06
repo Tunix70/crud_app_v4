@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
+import java.util.TimeZone;
 
 public class PostDAOImpl implements PostRepository {
     @Override
@@ -16,7 +17,8 @@ public class PostDAOImpl implements PostRepository {
         Session session = null;
         List <Post> postList = null;
         try {
-            session = HibernateUtil.getSessionFactory().openSession();
+            session = HibernateUtil.getSessionFactory().withOptions().
+                    jdbcTimeZone(TimeZone.getTimeZone("UTC")).openSession();
             CriteriaBuilder builder = session.getCriteriaBuilder();
             CriteriaQuery<Post> criteriaQuery = builder.createQuery(Post.class);
             criteriaQuery.from(Post.class);
