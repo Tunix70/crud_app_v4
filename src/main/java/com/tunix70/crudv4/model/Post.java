@@ -1,7 +1,6 @@
 package com.tunix70.crudv4.model;
 
 import com.tunix70.crudv4.util.TimeStampToLongConverter;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 

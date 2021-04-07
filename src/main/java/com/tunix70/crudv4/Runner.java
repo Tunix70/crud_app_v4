@@ -1,6 +1,8 @@
 package com.tunix70.crudv4;
 
 
+import com.tunix70.crudv4.model.Post;
+import com.tunix70.crudv4.model.PostStatus;
 import com.tunix70.crudv4.model.Region;
 import com.tunix70.crudv4.repository.DAO.PostDAOImpl;
 import com.tunix70.crudv4.repository.DAO.RegionDAOImpl;
@@ -13,22 +15,22 @@ public class Runner {
         PostDAOImpl pp = new PostDAOImpl();
         WriterDAOImpl ww = new WriterDAOImpl();
 
-        System.out.println(pp.getAll());
+        System.out.println(ww.getAll());
 //
 //        System.out.println("\n========================\n");
 
-//         System.out.println(rr.getById(1l));
+//         System.out.println(pp.getById(1l));
 //
 //        System.out.println("\n========================\n");
 //
-//            rr.save(new Region(9l, "new"));
+//            pp.save(new Post(null, "textadd", 63335l, 366644l, PostStatus.ACTIVE));
 //
 //        System.out.println("\n========================\n");
 //
-//        System.out.println(rr.update(new Region(1l, "one")));
+//        System.out.println(pp.update(new Post(1l, "textupdate", 63335l, 366644l, PostStatus.ACTIVE)));
 //
 //        System.out.println("\n========================\n");
-//        rr.deleteById(2l);
+//        pp.deleteById(4l);
 //        System.out.println(rr.getAll());
     }
 }
