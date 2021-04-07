@@ -1,5 +1,6 @@
 package com.tunix70.crudv4.model;
 
+import com.tunix70.crudv4.util.TimeStampToLongConverter;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -14,12 +15,12 @@ public class Post {
     @Column(name = "content")
     private String content;
     @Column(name = "created")
-    @Type(type = "org.hibernate.type.TimestampType")
+    @Convert(converter = TimeStampToLongConverter.class)
     private Long created;
     @Column(name = "updated")
-    @Type(type = "org.hibernate.type.TimestampType")
+    @Convert(converter = TimeStampToLongConverter.class)
     private Long updated;
-    @Column(name = "post_status", columnDefinition = "enum('active', 'deleted')")
+    @Column(name = "post_status")
     @Enumerated(EnumType.STRING)
     private PostStatus postStatus;
 
