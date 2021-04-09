@@ -36,15 +36,21 @@
                     <user>postgres</user>
                     <password>root</password>
                     <url>jdbc:postgresql://localhost:5432/crudv4</url>
+<!--                    <schemas>-->
+<!--                        <schema>public</schema>-->
+<!--                    </schemas>-->
+<!--                    <locations>-->
+<!--                        <location>db.migration\V1__init_db.sql</location>-->
+<!--                    </locations>-->
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>info</goal>
-                            <goal>migrate</goal>
-                        </goals>
-                    </execution>
-                </executions>
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>info</goal>-->
+<!--                            <goal>migrate</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
             </plugin>
         </plugins>
     </build>

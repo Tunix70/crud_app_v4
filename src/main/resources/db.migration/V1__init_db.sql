@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS post
+(post_id SERIAL NOT NULL PRIMARY KEY,
+content TEXT,
+created TIMESTAMP NOT NULL,
+UPDATED TIMESTAMP NOT NULL,
+post_status VARCHAR(10)
+);
+
+-- CREATE TABLE IF NOT EXISTS region
+-- (region_id SERIAL NOT NULL  PRIMARY KEY,
+-- name VARCHAR(10) NOT NULL UNIQUE
+-- );
+--
+-- CREATE TABLE IF NOT EXISTS writer
+-- (writer_id SERIAL NOT NULL PRIMARY KEY,
+-- firstname VARCHAR (30),
+-- lastname VARCHAR (30),
+-- post_id INTEGER,
+-- region_id INTEGER
+-- );
