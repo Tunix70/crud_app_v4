@@ -22,6 +22,9 @@ public class Post {
     @Column(name = "post_status")
     @Enumerated(EnumType.STRING)
     private PostStatus postStatus;
+    @ManyToOne
+    @JoinColumn(name = "writer_id")
+    private Writer writer;
 
     public Post() {
     }

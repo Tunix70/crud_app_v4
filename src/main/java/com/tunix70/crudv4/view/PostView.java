@@ -60,11 +60,12 @@ public class PostView {
                 } else if (input.equals("5")) {
                     System.out.println("Enter the Post number to delete");
                     Long num = Long.parseLong(scanner.nextLine());
-                    System.out.println(postController.getById(num));
+                    postController.deleteById(num);
+                    System.out.println("The selected post was successfully deleted");
                     runner();
                     break;
                 } else if (input.equals("6")) {
-                    ConsoleView.mainMenu();
+                    ConsoleView.startApp();
                     break;
                 } else {
                     System.out.println("Please, enter numbers from 1 to 6");

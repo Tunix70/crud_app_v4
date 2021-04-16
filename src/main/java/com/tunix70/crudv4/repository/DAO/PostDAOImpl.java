@@ -3,106 +3,64 @@ package com.tunix70.crudv4.repository.DAO;
 
 import com.tunix70.crudv4.model.Post;
 import com.tunix70.crudv4.repository.PostRepository;
-import com.tunix70.crudv4.util.HibernateUtil;
+import com.tunix70.crudv4.util.SessionUtil;
 import org.hibernate.Session;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 
 public class PostDAOImpl implements PostRepository {
+    private SessionUtil sessionUtil = new SessionUtil();
     @Override
     public List<Post> getAll() {
-        Session session = null;
         List <Post> postList = null;
-        try {
-            session = HibernateUtil.getSessionFactory().withOptions().
-                    jdbcTimeZone(TimeZone.getTimeZone("UTC")).openSession();
+        try(Session session = sessionUtil.openSession()){
             CriteriaBuilder builder = session.getCriteriaBuilder();
             CriteriaQuery<Post> criteriaQuery = builder.createQuery(Post.class);
             criteriaQuery.from(Post.class);
-
             postList = session.createQuery(criteriaQuery).getResultList();
-        }catch (Exception e) {
-            System.err.println(e);
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
         }
         return postList;
     }
 
     @Override
     public Post getById(Long id) {
-        Session session = null;
         Post post = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
+        try (Session session = sessionUtil.openSession()){
             post = session.load(Post.class, id);
-        } catch (Exception e) {
-            System.err.println(e);
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
         }
         return post;
     }
 
     @Override
     public Post save(Post post) {
-        Session session = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
+        try (Session session = sessionUtil.openTransactionSession()) {
+            post.setCreated(new Date().getTime());
+            post.setUpdated(new Date().getTime());
             session.save(post);
             session.getTransaction().commit();
-        }catch (Exception e){
-            System.err.println(e);
-        }finally {
-            if(session != null && session.isOpen()){
-                session.close();
-            }
         }
-
         return post;
     }
 
     @Override
     public Post update(Post post) {
-        Session session = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
+        try (Session session = sessionUtil.openTransactionSession()) {
+            post.setUpdated(new Date().getTime());
             session.update(post);
             session.getTransaction().commit();
-        } catch (Exception e) {
-            System.err.println(e);
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
         }
         return post;
     }
 
     @Override
     public void deleteById(Long id) {
-        Session session = null;
-        try{
-            session = HibernateUtil.getSessionFactory().openSession();
+        try (Session session = sessionUtil.openTransactionSession()) {
             Post post = session.load(Post.class, id);
-            session.beginTransaction();
             session.delete(post);
             session.getTransaction().commit();
-        }catch (Exception e) {
-            System.err.println(e);
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
         }
     }
 }

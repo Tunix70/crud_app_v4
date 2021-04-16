@@ -60,11 +60,12 @@ public class RegionView {
                         }else if(input.equals("5")){
                                 System.out.println("Enter the Region number to delete");
                                 Long num = Long.parseLong(scanner.nextLine());
-                                System.out.println(regionController.getById(num));
+                                regionController.deleteById(num);
+                                System.out.println("The selected region was successfully deleted");
                                 runner();
                                 break;
                         }else if(input.equals("6")){
-                                ConsoleView.mainMenu();
+                                ConsoleView.startApp();
                                 break;
                         }else{
                                 System.out.println("Please, enter numbers from 1 to 6");

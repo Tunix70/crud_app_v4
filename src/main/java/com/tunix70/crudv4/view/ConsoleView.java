@@ -3,24 +3,25 @@ package com.tunix70.crudv4.view;
 import java.util.Scanner;
 
 public class ConsoleView {
-    private RegionView regionView = new RegionView();
-    private WriterView writerView = new WriterView();
-    private PostView postView = new PostView();
-       private Scanner scanner;
+    private static Scanner scanner;
+    private static RegionView regionView = new RegionView();
+    private static WriterView writerView = new WriterView();
+    private static PostView postView = new PostView();
 
-       public void startApp(){
+
+       public static void startApp(){
            mainMenu();
            selectMenu();
        }
 
-       public static void mainMenu(){
+       private static void mainMenu(){
            System.out.println("\n*** MAIN MENU ***");
            System.out.println(" ================================= ");
            System.out.println("Choose next action:");
            System.out.println("1. WRITER\n2. POST\n3. REGION\n4. EXIT");
        }
 
-       private void selectMenu(){
+       private static void selectMenu(){
            String input;
            scanner = new Scanner(System.in);
            while (true){

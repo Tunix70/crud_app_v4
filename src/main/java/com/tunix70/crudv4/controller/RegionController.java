@@ -8,7 +8,7 @@ import com.tunix70.crudv4.repository.RegionRepository;
 import java.util.List;
 
 public class RegionController {
-    private RegionRepository regionRepository = new RegionDAOImpl();
+    private final RegionRepository regionRepository = new RegionDAOImpl();
 
     public List<Region> getAll(){
         return regionRepository.getAll();

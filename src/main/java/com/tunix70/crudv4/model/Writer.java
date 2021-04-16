@@ -14,8 +14,9 @@ public class Writer {
     private String firstName;
     @Column (name = "lastname")
     private String lastName;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "post_id")
+    @OneToMany(fetch = FetchType.LAZY,
+            mappedBy = "writer",
+            cascade = CascadeType.ALL)
     private List<Post> post;
     @ManyToOne
     @JoinColumn(name = "region_id")
