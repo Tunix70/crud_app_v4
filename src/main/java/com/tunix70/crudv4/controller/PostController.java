@@ -1,14 +1,14 @@
 package com.tunix70.crudv4.controller;
 
 import com.tunix70.crudv4.model.Post;
-import com.tunix70.crudv4.repository.DAO.PostDAOImpl;
+import com.tunix70.crudv4.repository.Impl.PostRepoImpl;
 import com.tunix70.crudv4.repository.PostRepository;
 
 
 import java.util.List;
 
 public class PostController {
-    private final PostRepository postRepository = new PostDAOImpl();
+    private final PostRepository postRepository = new PostRepoImpl();
 
     public List<Post> getAll(){
         return postRepository.getAll();

@@ -1,4 +1,4 @@
-package com.tunix70.crudv4.repository.DAO;
+package com.tunix70.crudv4.repository.Impl;
 
 
 import com.tunix70.crudv4.model.Post;
@@ -11,7 +11,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import java.util.Date;
 import java.util.List;
 
-public class PostDAOImpl implements PostRepository {
+public class PostRepoImpl implements PostRepository {
     private SessionUtil sessionUtil = new SessionUtil();
     @Override
     public List<Post> getAll() {

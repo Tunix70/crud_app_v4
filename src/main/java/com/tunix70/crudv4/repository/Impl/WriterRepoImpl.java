@@ -1,4 +1,4 @@
-package com.tunix70.crudv4.repository.DAO;
+package com.tunix70.crudv4.repository.Impl;
 
 import com.tunix70.crudv4.model.Writer;
 import com.tunix70.crudv4.repository.WriterRepository;
@@ -9,7 +9,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
-public class WriterDAOImpl implements WriterRepository {
+public class WriterRepoImpl implements WriterRepository {
     private SessionUtil sessionUtil = new SessionUtil();
 
     @Override
