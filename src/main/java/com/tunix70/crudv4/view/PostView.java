@@ -33,17 +33,14 @@ public class PostView {
                     postController.save(new Post(null, content, null, null, selectRole()));
                     System.out.println("New Post successfully entered");
                     runner();
-                    break;
                 } else if (input.equals("2")) {
                     System.out.println(postController.getAll());
                     runner();
-                    break;
                 } else if (input.equals("3")) {
                     System.out.println("Enter the Post number");
                     Long num = Long.parseLong(scanner.nextLine());
                     System.out.println(postController.getById(num));
                     runner();
-                    break;
                 } else if (input.equals("4")) {
                     System.out.println("Enter the Post number, which will be updated");
                     Long num = Long.parseLong(scanner.nextLine());
@@ -56,17 +53,14 @@ public class PostView {
                     editPost.setPostStatus(selectRole());
                     System.out.println("Post successfully updated");
                     runner();
-                    break;
                 } else if (input.equals("5")) {
                     System.out.println("Enter the Post number to delete");
                     Long num = Long.parseLong(scanner.nextLine());
                     postController.deleteById(num);
                     System.out.println("The selected post was successfully deleted");
                     runner();
-                    break;
                 } else if (input.equals("6")) {
                     ConsoleView.startApp();
-                    break;
                 } else {
                     System.out.println("Please, enter numbers from 1 to 6");
                     menu();
