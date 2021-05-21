@@ -38,32 +38,26 @@ public class WriterView {
                     writerController.save(createNewWriter());
                     System.out.println("New Writer successfully entered");
                     runner();
-                    break;
                 } else if (input.equals("2")) {
                     System.out.println(writerController.getAll());
                     runner();
-                    break;
                 } else if (input.equals("3")) {
                     System.out.println("Enter the Writer number");
                     Long num = Long.parseLong(scanner.nextLine());
                     System.out.println(writerController.getById(num));
                     runner();
-                    break;
                 } else if (input.equals("4")) {
                     writerController.update(updateUser());
                     System.out.println("Writer successfully updated");
                     runner();
-                    break;
                 } else if (input.equals("5")) {
                     System.out.println("Enter the Writer number to delete");
                     Long num = Long.parseLong(scanner.nextLine());
                     writerController.deleteById(num);
                     System.out.println("The selected writer was successfully deleted");
                     runner();
-                    break;
                 } else if (input.equals("6")) {
                     ConsoleView.startApp();
-                    break;
                 } else {
                     System.out.println("Please, enter numbers from 1 to 6");
                     menu();
