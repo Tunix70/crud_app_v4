@@ -60,7 +60,7 @@ public class RegionView {
                                 System.out.println("The selected region was successfully deleted");
                                 runner();
                         }else if(input.equals("6")){
-                                ConsoleView.startApp();
+                                break;
                         }else{
                                 System.out.println("Please, enter numbers from 1 to 6");
                                 menu();
