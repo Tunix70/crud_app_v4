@@ -9,19 +9,19 @@ public class ConsoleView {
     private static PostView postView = new PostView();
 
 
-       public static void startApp(){
+       public void startApp(){
            mainMenu();
            selectMenu();
        }
 
-       private static void mainMenu(){
+       private void mainMenu(){
            System.out.println("\n*** MAIN MENU ***");
            System.out.println(" ================================= ");
            System.out.println("Choose next action:");
            System.out.println("1. WRITER\n2. POST\n3. REGION\n4. EXIT");
        }
 
-       private static void selectMenu(){
+       private void selectMenu(){
            String input;
            scanner = new Scanner(System.in);
            while (true){
